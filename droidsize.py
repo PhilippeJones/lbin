@@ -20,7 +20,7 @@ def usage():
     print ""
     print "  Options:"
     print "    -v, --verbose"
-    print "    -s, --size xxhdpi|xhdpi|hdpi|mdpi"
+    print "    -s, --size xxhdpi|xxhdpi|xhdpi|hdpi|mdpi"
     print "    -n, --name filename"
 
 def main(argv):
@@ -74,8 +74,14 @@ def main(argv):
         densities["hdpi"] = 1.5
         densities["xhdpi"] = 2.0
         densities["xxhdpi"] = 3.0
+    elif size == "xxxhdpi":
+        densities["mdpi"] = 1.0
+        densities["hdpi"] = 1.5
+        densities["xhdpi"] = 2.0
+        densities["xxhdpi"] = 3.0
+        densities["xxxhdpi"] = 4.0
     else:
-        print "%s is not a valid size, must be one of mdpi, hdpi, xhdpi, xxhdpi." % (size)
+        print "%s is not a valid size, must be one of mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi." % (size)
         print ""
         usage()
         sys.exit(2)
